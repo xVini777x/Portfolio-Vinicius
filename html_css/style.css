@@ -5,7 +5,7 @@
     background-size:  cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 0 6%;
+    padding: 0 4%;
 }
 
 nav{
@@ -24,7 +24,7 @@ nav{
 nav ul{
     flex: 1;
     text-align: right; 
-    padding: 20px;
+    padding: 10px;
 }
 
 nav ul li{
