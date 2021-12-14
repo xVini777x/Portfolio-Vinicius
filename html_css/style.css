@@ -30,7 +30,7 @@ nav ul{
 nav ul li{
     list-style: none;
     display: inline-block;
-    margin: 15px 30px;
+    margin: 10px 30px;
 
 }
 
@@ -197,8 +197,10 @@ nav ul li:hover:after{
     color: #66f04f;
 }
 
+/* @MEDIA - MOBILE */
 
 
+/* 900px */
 @media (max-width: 900px){
     .card{
         flex-basis: calc(40% - 10px);
@@ -221,12 +223,13 @@ nav ul li:hover:after{
     }
 }
 
+/* 700px */
 @media (max-width: 700px){
     .text-box{
-        margin-right: 50px;
+        margin-right: 60px;
     }
     .text-box h1 {
-        font-size: 105px;
+        font-size: 80px;
     }
 
     .text-box-about{
@@ -239,13 +242,18 @@ nav ul li:hover:after{
     }
 }
 
+/* 632px */
 @media(max-width: 632px){
     .text-box-about h1:before{
         padding-top: 70px;
     }
 }
 
+/* 518px */
 @media(max-width: 518px){
+    .text-box h1 {
+        font-size: 80px;
+    }
     .text-box p {
         margin-bottom: -10px;
     }
@@ -261,13 +269,53 @@ nav ul li:hover:after{
     .text-box-about h1:before{
         padding-top: 70px;
     }
-    
+
     .text-box-projects h1 {
         font-size: 35px;
     }
-    
+
     .text-box-projects p {
         font-size: 15px;
     }
 }
 
+/* 420px */
+@media(max-width: 420px){
+    .text-box {
+        margin-bottom: 50px;
+    }
+
+    .text-box h1{
+        font-size: 45px;
+        margin-left: 1px;
+        margin-bottom: -30px;
+    }
+
+    .text-box h3 {
+        font-size: 18px;
+    }
+
+    .text-box p {
+        font-size: 25px;
+        margin-bottom: -30px;
+    }
+
+
+    .text-box-about h1:before{
+        padding-top: 40px;
+    }
+
+    .text-box-about p {
+        font-size: 15px;
+    }
+    
+    .about-foto {
+        width: 180px;
+           margin-left: 55px;
+    }
+    
+    .text-box-about{
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+}
