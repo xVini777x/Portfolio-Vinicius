@@ -1,0 +1,8 @@
+deploy_production:
+  image: dotsunited/git-ftp
+  stage: deploy
+  only:
+    - deploy
+  script:
+    # - git ftp init --user $USERNAME --passwd $PASSWORD $HOST
+    - git ftp push -v --user $USERNAME --passwd $PASSWORD $HOST
