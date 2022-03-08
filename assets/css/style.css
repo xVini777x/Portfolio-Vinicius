@@ -4,7 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   font-size: 1em;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 a {
@@ -27,7 +27,6 @@ a:hover {
 .container-home {
   width: 100%;
   height: 100vh;
-  background-image: url(/imgs/Game-Development2.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,13 +59,13 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   position: relative;
 }
 
 nav ul li:after {
-  content: '';
+  content: "";
   width: 0%;
   height: 2px;
   display: block;
@@ -130,17 +129,20 @@ nav ul li:hover:after {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 3% 3%;
-  background-color: #F8F8FB;
+  background-color: #f8f8fb;
   border-radius: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
   padding: 0 30px 0 30px;
 }
 
-.about-foto {
+figure {
+  text-align: center;
+}
+
+figure .about-foto {
   width: 200px;
   height: 200px;
-  margin-left: 20px;
   border: 1px solid #ffff;
   border-radius: 55%;
   -o-object-fit: cover;
@@ -149,8 +151,8 @@ nav ul li:hover:after {
   background: #66f04f;
 }
 
-.about-foto img {
-  padding: 3% 3%;
+.text-box-header {
+  text-align: center;
 }
 
 .text-box-header h1 {
@@ -161,35 +163,24 @@ nav ul li:hover:after {
 
 .text-box-header p {
   font-size: 20px;
-  margin-left: 25px;
 }
 
 .text-box-header p span {
   color: #66f04f;
 }
 
-.text-box-about {
-  text-align: left;
-  margin-left: 170px;
-  margin-top: -200px;
-  padding: 2% 10%;
-}
-
 .text-box-about h1 {
   margin-bottom: 20px;
   font-size: 25px;
-}
-
-.text-box-about h1 p {
-  margin-left: -20px;
+  position: relative;
 }
 
 .text-box-about h1:before {
   width: 60px;
-  border-bottom: 2px solid #66f04f;
-  content: '';
+  border-bottom: 3px solid #66f04f;
+  content: "";
   position: absolute;
-  padding-top: 40px;
+  top: 33px;
 }
 
 .text-box-about p {
@@ -197,7 +188,7 @@ nav ul li:hover:after {
 }
 
 .container-projects {
-  background-color: #F8F8FB;
+  background-color: #f8f8fb;
   border-radius: 50px;
 }
 
@@ -249,19 +240,8 @@ nav ul li:hover:after {
 
 /* 700px */
 @media (max-width: 700px) {
-  .text-box {
-    margin-right: 60px;
-  }
   .text-box h1 {
     font-size: 80px;
-  }
-  .text-box-about {
-    margin-left: 200px;
-    padding: 0% 8%;
-    margin-top: -170px;
-  }
-  .about-foto {
-    margin-left: 0px;
   }
 }
 
@@ -279,14 +259,6 @@ nav ul li:hover:after {
   }
   .text-box p {
     margin-bottom: -10px;
-  }
-  .text-box-about {
-    margin-left: 200px;
-    padding: 0% 2%;
-    margin-top: -170px;
-  }
-  .about-foto {
-    margin-left: -15px;
   }
   .text-box-about h1:before {
     padding-top: 70px;
@@ -324,11 +296,6 @@ nav ul li:hover:after {
   }
   .about-foto {
     width: 180px;
-    margin-left: 55px;
-  }
-  .text-box-about {
-    margin-left: 20px;
-    margin-top: 20px;
   }
 }
 
@@ -340,7 +307,7 @@ nav ul li:hover:after {
   background: #2f6d9b;
   z-index: 2;
   position: fixed;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .menu-mobile-content li {
@@ -354,7 +321,7 @@ nav ul li:hover:after {
 }
 
 .menu-mobile-content a:after {
-  content: '';
+  content: "";
   width: 0%;
   height: 2px;
   display: block;
