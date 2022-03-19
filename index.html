@@ -9,7 +9,10 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link href="assets/images/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/owl.carousel.css" />
+    <link rel="stylesheet" href="assets/css/owl.theme.default.css" />
+    <link rel="stylesheet" href="assets/css/owl.theme.green.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -19,7 +22,10 @@
     <section class="container-home">
       <nav>
         <a href="#"
-          ><img class="logo" src="assets/images/Portfólio-fff-neon.png" alt=""
+          ><img
+            class="logo"
+            src="assets/css/images/Portfólio-fff-neon.png"
+            alt=""
         /></a>
 
         <ul class="nav-links">
@@ -41,14 +47,18 @@
             <li><a href="#">Contato</a></li>
           </ul>
         </div>
-        <img id="menuBtn" src="assets/images/3-Line-Menu-Icon-png-hd.png" alt="" />
+        <img
+          id="menuBtn"
+          src="assets/css/images/3-Line-Menu-Icon-png-hd.png"
+          alt=""
+        />
       </nav>
       <div class="container">
         <div class="text-box">
           <p>i'm</p>
           <h1>vinicius</h1>
           <h3>desenvolvedor web</h3>
-          <div >
+          <div>
             <span
               >Você pode explorar mais sobre meu portfólio e <br />Experiências
               da minha vida pessoal aqui<br
@@ -74,11 +84,13 @@
             </header>
 
             <div class="row">
-              <div class="col-12 col-lg-3 align-items-center justify-content-center">
+              <div
+                class="col-12 col-lg-3 align-items-center justify-content-center"
+              >
                 <figure>
                   <img
                     class="about-foto"
-                    src="assets/images/foto-vinicius.jpeg"
+                    src="assets/css/images/foto-vinicius.jpeg"
                     alt="foto de vinicius"
                   />
                 </figure>
@@ -117,75 +129,30 @@
               &#8722;
             </p>
           </header>
-
-          <div class="cards-projects">
-            <div class="card" style="width: 18rem">
-              <img class="card-img-top" src="..." alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+          <div id="slide-projetos" class="owl-carousel owl-theme owl-loaded owl-drag">
+            <div>
+              <figure>
+                <img src="assets/css/images/Game-Development2.png" alt="" />
+                <p>Projeto de uma pizzaria</p>
+              </figure>
             </div>
-
-            <div class="card" style="width: 18rem">
-              <img class="card-img-top" src="..." alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card" style="width: 18rem">
-              <img class="card-img-top" src="..." alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card" style="width: 18rem">
-              <img class="card-img-top" src="..." alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+            <div>
+              <figure>
+                <img src="assets/css/images/Game-Development2.png" alt="" />
+                <p>Projeto de uma one-page</p>
+              </figure>
             </div>
           </div>
         </div>
       </section>
-      <!--  SECTION - MEUS PROJETOS - END -->
     </main>
+    <!--  SECTION - MEUS PROJETOS - END -->
 
     <!--  SCRIPT - MENU MOBILE -->
-    <script>
-      var menuBtn = document.getElementById("menuBtn");
-      var menuMobile = document.getElementById("menuMobile");
 
-      menuMobile.style.right = "-450px";
-      menuBtn.onclick = function () {
-        if (menuMobile.style.right === "-450px") {
-          menuMobile.style.right = "0";
-        } else {
-          menuMobile.style.right = "-450px";
-        }
-      };
-    </script>
+    <script src="assets/js/main.min.js"></script>
+    <script src="src/js/includes/jquery-3.6.0.min.js"></script>
+    <script src="src/js/includes/owl.carousel.js"></script>
     <!--  SCRIPT - MENU MOBILE - END -->
   </body>
 </html>

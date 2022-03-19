@@ -25,11 +25,11 @@ a:hover {
 
 .container-home {
   width: 100%;
+  background: url(images/Game-Development2.png);
   height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 0 4%;
 }
 
 nav {
@@ -38,6 +38,14 @@ nav {
   padding: 0 1px;
   flex-wrap: wrap;
   align-items: center;
+}
+@media only screen and (max-width: 900px) {
+  nav {
+    z-index: 9999999999;
+    position: fixed;
+    box-shadow: 0 0 15px 7px;
+    background-color: #262c40;
+  }
 }
 
 .logo {
@@ -76,25 +84,28 @@ nav ul li:hover:after {
 .text-box {
   position: absolute;
   margin-bottom: 80px;
-  margin-left: 15px;
-  bottom: 8%;
+  bottom: 5px;
   color: #fff;
 }
 .text-box p {
   font-size: 35px;
   font-weight: 600;
+  text-transform: uppercase;
 }
 .text-box h1 {
+  text-transform: uppercase;
   font-size: 150px;
   line-height: 160px;
-  margin-left: -15px;
   color: transparent;
   -webkit-text-stroke: 1px #fff;
-  background: url(back.webp);
+  background: url(images/back.webp);
   -webkit-background-clip: text;
   background-position: 0 0;
   -webkit-animation: back 20s linear infinite;
           animation: back 20s linear infinite;
+}
+.text-box h3 {
+  text-transform: uppercase;
 }
 .text-box .row {
   display: flex;
@@ -222,6 +233,12 @@ figure .about-foto {
     display: none !important;
   }
 }
+/* 767px */
+@media only screen and (max-width: 767px) {
+  .text-box h1 {
+    font-size: 130px;
+  }
+}
 /* 700px */
 @media (max-width: 700px) {
   .text-box h1 {
@@ -255,13 +272,16 @@ figure .about-foto {
   }
 }
 /* 420px */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+  .container-home {
+    height: 70vh;
+  }
+
   .text-box {
-    margin-bottom: 50px;
+    top: 200px;
   }
   .text-box h1 {
     font-size: 45px;
-    margin-left: 1px;
     margin-bottom: -30px;
   }
   .text-box h3 {
@@ -323,4 +343,8 @@ figure .about-foto {
   z-index: 2;
   cursor: pointer;
   background: #2f6d9b;
+}
+
+#slide-projetos {
+  margin-top: 20px;
 }
