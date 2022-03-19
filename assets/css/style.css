@@ -245,12 +245,6 @@ figure .about-foto {
     font-size: 80px;
   }
 }
-/* 632px */
-@media (max-width: 632px) {
-  .text-box-about h1:before {
-    padding-top: 70px;
-  }
-}
 /* 518px */
 @media (max-width: 518px) {
   .text-box h1 {
@@ -258,10 +252,6 @@ figure .about-foto {
   }
   .text-box p {
     margin-bottom: -10px;
-  }
-
-  .text-box-about h1:before {
-    padding-top: 70px;
   }
 
   .text-box-projects h1 {
@@ -308,7 +298,7 @@ figure .about-foto {
   height: 100vh;
   right: 0;
   top: 0;
-  background: #2f6d9b;
+  background: #262c40;
   z-index: 2;
   position: fixed;
   transition: 0.5s;
@@ -342,7 +332,7 @@ figure .about-foto {
   top: 20px;
   z-index: 2;
   cursor: pointer;
-  background: #2f6d9b;
+  background: #262c40;
 }
 
 #slide-projetos {
