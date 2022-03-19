@@ -11,8 +11,9 @@ var browsersup, path;
 //////////////////////////////////////
 
 path = {
-  dev: "src", //DIRETORIO DE DESENVOLVIMENTO
-  prod: "assets", //DIRETORIO DE PRODUCAO
+  php: "/**/*.php", //DIRETORIO DE DESENVOLVIMENTO
+  dev: "/src", //DIRETORIO DE DESENVOLVIMENTO
+  prod: "/assets", //DIRETORIO DE PRODUCAO
   proxy: "http://localhost/portfólio/", //URL DO PROJETO LOCAL
 };
 
@@ -26,7 +27,7 @@ const concat = require("gulp-concat");
 const newer = require("gulp-newer");
 const notify = require("gulp-notify");
 const rename = require("gulp-rename");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const postcss = require("gulp-postcss"); // O PostCSS move todo o código necessário para criar funções, utilidades e mixins fora de nossas folhas de estilo e os envolve como plugins.
 const plumber = require("gulp-plumber"); // substitui o pipemétodo e remove o onerrormanipulador padrão no errorevento, que despeja fluxos por erro por padrão.
 const cssmin = require("gulp-cssmin"); // minifica o css
@@ -34,17 +35,16 @@ const spritesmith = require("gulp.spritesmith");
 const del = require("del");
 const size = require("gulp-size");
 const tinypng = require("gulp-tinypng-compress");
-const browserSync = require("browser-sync").create();
-const inquirer = require("inquirer");
 const svgmin = require("gulp-svgmin");
-const svgstore = require("gulp-svgstore");
+
+const browserSync = require("browser-sync").create();
 
 // sync
 function sync() {
   browserSync.init({
     proxy: path.proxy,
     notify: true,
-    port: 8890, // definido a porta 8000, por default a porta é a 3000
+    port: 80, // definido a porta 8000, por default a porta é a 3000
   });
 
   //done();
@@ -52,10 +52,8 @@ function sync() {
 
 // clear
 function clean() {
-  return del(path.prod, { force: true });
+  return del(["./build/"]);
 }
-
-
 
 // sprites
 function sprite() {
@@ -101,14 +99,7 @@ function images() {
         imagemin.gifsicle({ interlaced: true }),
         imagemin.mozjpeg({ progressive: true }),
         imagemin.optipng({ optimizationLevel: 5 }),
-        // imagemin.svgo({
-        //   plugins: [
-        //     {
-        //       removeViewBox: false,
-        //       collapseGroups: true,
-        //     },
-        //   ],
-        // }),
+      
       ])
     )
     .pipe(gulp.dest(path.prod + "/images"))
@@ -122,7 +113,11 @@ function images() {
       })
     )
     .pipe(browserSync.stream());
+
 }
+
+
+
 function svg() {
   return gulp
     .src(path.dev + "/svg/**/*.svg")
@@ -130,6 +125,7 @@ function svg() {
     .pipe(gulp.dest(path.prod + "/svg-icons"))
     .pipe(browserSync.stream());
 }
+
 
 // fonts
 function fonts() {
@@ -172,7 +168,7 @@ function scripts() {
       size({
         title: "[  JS  ] Tamanho do arquivo minificado ✔ :",
         gzip: false,
-        pretty: true,
+        pretty: false,
         showFiles: true,
         showTotal: true,
       })
@@ -208,6 +204,7 @@ function css() {
     .pipe(postcss([autoprefixer()])) // adc os autoprefixo nas propriedades css para suporte aos browser - atentar o browserslist no arquivo npm pois estamos utilizando o autoprefix direto do node.
     .pipe(gulp.dest(path.prod + "/css/")) // primeiro destino do arquivo main.css.
     .pipe(concat("main.css")) // concatena tudo que for css(libs,seus arquivos css) no arquivo main.css.
+    .pipe(browserSync.stream())
     .pipe(cssmin()) // minifica tudo de css.
     .pipe(rename("main.min.css")) // renomeia o arquivo main.css para main.min.css, gerando um novo arquivo.
     .pipe(gulp.dest(path.prod + "/css/")) // adc o novo arquivo gerado chamado main.min.css para a pasta css.
@@ -226,26 +223,16 @@ function css() {
 
 // html
 function dom() {
+  // log(file);
+
   return gulp
-    .src("templates/dev/**/*.php")
+    .src(path.php)
     .pipe(
       size({
-        title: "[ HTML ] Tamanho do arquivo:",
+        title: "[ PHP ] Foi Alterado.",
         gzip: false,
-        pretty: true,
-        showFiles: true,
-        showTotal: true,
-      })
-    )
-    .pipe(html({ collapseWhitespace: true })) // parametro para o arquivo ser minificado.
-    .on("error", notify.onError({ message: "Error: <%= error.message %>" }))
-    .pipe(gulp.dest("templates/")) // manda o arquivo para o destino.
-    .pipe(
-      size({
-        title: "[ HTML ] Tamanho do arquivo minificado ✔ :",
-        gzip: false,
-        pretty: true,
-        showFiles: true,
+        pretty: false,
+        showFiles: false,
         showTotal: true,
       })
     )
@@ -254,27 +241,36 @@ function dom() {
 
 gulp.task("sass", css);
 gulp.task("js", scripts);
-gulp.task("images", images);
 gulp.task("svg", svg);
 gulp.task("fonts", fonts);
 gulp.task("clean", clean);
 
+
+// gulp.watch("../*.php").on("change", function (file) {
+//   log(path.proxy);
+//   return gulp.src("../*.php").pipe(livereload());
+// });
+
 // watch
 function watch() {
-  //gulp.watch('./front-page.php',dom);
+  gulp.watch(path.php, dom);
   gulp.watch(path.dev + "/scss/**/*", css);
   gulp.watch(path.dev + "/images/*.png", sprite);
   gulp.watch(path.dev + "/images/**/*", images);
   gulp.watch(path.dev + "/svg/**/*", svg);
   gulp.watch(path.dev + "/fonts/**/*", fonts);
   gulp.watch(path.dev + "/js/**/*", gulp.series(scripts));
+  // gulp.watch(path.php).on('change', browserSync.stream());
 }
 
 // build - limpa primeiro e depois build o dom e css
 gulp.task(
   "build",
-  gulp.series(clean, gulp.parallel(css, images, svg, fonts, scripts))
+  gulp.series(clean, gulp.parallel(css, images, sprite, svg, fonts, scripts))
 );
 
 // default - observa os arquivos e syncroniza com o browser
 gulp.task("default", gulp.parallel(watch, sync));
+
+
+
