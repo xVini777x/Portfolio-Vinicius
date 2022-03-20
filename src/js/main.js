@@ -11,7 +11,6 @@ menuBtn.onclick = function () {
 };
 
 $("#slide-projetos").owlCarousel({
-  loop: true,
   margin: 5,
   responsiveClass: true,
   autoHeight: true,
