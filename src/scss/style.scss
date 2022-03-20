@@ -6,6 +6,7 @@
 @import 'video';
 @import "theme.default";
 @import "theme.green";
+@import "menu-mobile";
 
 * {
   padding: 0;
@@ -40,57 +41,6 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-nav {
-  display: flex;
-  width: 100%;
-  padding: 0 1px;
-  flex-wrap: wrap;
-  align-items: center;
-  @media only screen and (max-width: 900px) {
-    z-index: 9999999999;
-    position: fixed;
-    box-shadow: 0 0 15px 7px;
-    background-color: #262c40;
-  }
-}
-
-.logo {
-  width: 130px;
-  cursor: pointer;
-}
-
-nav ul {
-  flex: 1;
-  text-align: right;
-  padding: 10px;
-
-  li {
-    list-style: none;
-    display: inline-block;
-    margin: 10px 30px;
-
-    a {
-      color: #fff;
-      text-decoration: none;
-      position: relative;
-    }
-
-    &:after {
-      content: "";
-      width: 0%;
-      height: 2px;
-      display: block;
-      background: #fff;
-      margin: auto;
-      transition: 0.3s;
-    }
-
-    &:hover:after {
-      width: 50%;
-    }
-  }
 }
 
 .text-box {

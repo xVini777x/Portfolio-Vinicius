@@ -10,9 +10,6 @@
       crossorigin="anonymous"
     />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/css/owl.carousel.css" />
-    <link rel="stylesheet" href="assets/css/owl.theme.default.css" />
-    <link rel="stylesheet" href="assets/css/owl.theme.green.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -20,38 +17,37 @@
   </head>
   <body>
     <section class="container-home">
-      <nav>
-        <a href="#"
-          ><img
-            class="logo"
-            src="assets/css/images/Portfólio-fff-neon.png"
-            alt=""
-        /></a>
+  <nav
+        class="site-nav js-site-nav"
+        role="navigation"
+        aria-label="navigation"
+      >
+        <div class="site-nav__curtain js-nav-curtain"></div>
 
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#sobremim-position">Sobre mim</a></li>
-          <li><a href="#projects-position">Projetos</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </nav>
+        <div class="wrapper wrapper__nav-area">
+          <button
+            class="menu-button js-menu-button"
+            aria-expanded="false"
+            aria-controls="menu"
+            aria-label="Menu button"
+          >
+            <span class="menu-button__lines">
+              <span class="menu-button__line"></span>
+              <span class="menu-button__line"></span>
+              <span class="menu-button__line"></span>
+            </span>
+          </button>
 
-      <nav class="ds_none">
-        <div id="menuMobile">
-          <ul class="menu-mobile-content">
-            <li><a href="#">Home</a></li>
-            <li><a href="#sobremim-position">Sobre mim</a></li>
-            <li><a href="#projects-position">Projetos</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Contato</a></li>
+          <a class="logo" href="#">Portfólio</a>
+
+          <ul class="site-nav__menu u-list-reset js-menu" id="menu">
+            <li><a class="site-nav__link" href="#">Home</a></li>
+            <li><a class="site-nav__link" href="#sobremim-position">Sobre mim</a></li>
+            <li><a class="site-nav__link" href="#projects-position">Projetos</a></li>
+            <li><a class="site-nav__link" href="#">Skills</a></li>
+            <li><a class="site-nav__link" href="#">Contato</a></li>
           </ul>
         </div>
-        <img
-          id="menuBtn"
-          src="assets/css/images/3-Line-Menu-Icon-png-hd.png"
-          alt=""
-        />
       </nav>
       <div class="container">
         <div class="text-box">
@@ -148,11 +144,10 @@
     </main>
     <!--  SECTION - MEUS PROJETOS - END -->
 
-    <!--  SCRIPT - MENU MOBILE -->
-
+    <!--  SCRIPT -->
     <script src="assets/js/main.min.js"></script>
     <script src="src/js/includes/jquery-3.6.0.min.js"></script>
     <script src="src/js/includes/owl.carousel.js"></script>
-    <!--  SCRIPT - MENU MOBILE - END -->
+    <!--  SCRIPT - END -->
   </body>
 </html>
