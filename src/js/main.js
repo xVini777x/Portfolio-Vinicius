@@ -2,6 +2,7 @@ const siteNav = document.querySelector('.js-site-nav')
 const menu = document.querySelector('.js-menu')
 const menuButton = document.querySelector('.js-menu-button')
 const navCurtain = document.querySelector('.js-nav-curtain')
+const navLinks = document.querySelector('.site-nav__menu')
 
 function mobileNavToggler() {
   const state = {
@@ -30,6 +31,10 @@ function mobileNavToggler() {
     navCurtain.classList.add('curtain-down')
   }
 
+  function teste() {
+
+  }
+
   function unfocusButton(event) {
     menuButton.classList.remove('menu-button__lines--open')
     menuButton.setAttribute('aria-expanded', 'false')
@@ -49,10 +54,15 @@ function mobileNavToggler() {
       return
     }
 
+
+    
+
+
     focusButton()
     curtainUp()
     state.isOpen = true
   }
+
 
   function handleCurtainAnimationEnd() {
     if (state.isOpen) {
@@ -73,6 +83,7 @@ function mobileNavToggler() {
     },
 
     init() {
+      navLinks.addEventListener('click', this)
       menuButton.addEventListener('click', this)
       navCurtain.addEventListener('animationend', this)
     },
