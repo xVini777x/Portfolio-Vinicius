@@ -1,12 +1,13 @@
 // importandos sass owl-carousel
-@import 'core';
-@import 'animate';
-@import 'autoheight';
-@import 'lazyload';
-@import 'video';
+@import "core";
+@import "animate";
+@import "autoheight";
+@import "lazyload";
+@import "video";
 @import "theme.default";
 @import "theme.green";
 @import "menu-mobile";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
   padding: 0;
@@ -14,7 +15,7 @@
   box-sizing: border-box;
   text-decoration: none;
   font-size: 1em;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -131,9 +132,8 @@ figure {
     margin-bottom: 20px;
     font-size: 25px;
     position: relative;
-
   }
-  h2{
+  h2 {
     font-size: 25px;
     &:before {
       width: 60px;
@@ -250,7 +250,7 @@ figure {
 
 /* 420px */
 @media (max-width: 480px) {
-  .container-home{
+  .container-home {
     height: 70vh;
   }
   .text-box {
@@ -331,10 +331,19 @@ figure {
   background: #262c40;
 }
 
-#slide-projetos{
+#slide-projetos {
   margin-top: 20px;
-  p{
-    font-size: 18px;
+  p {
+    font-size: 13px;
     margin-top: 10px;
+    color: #fff;
+  }
+  figure {
+    background-color: #212529;
+    padding: 20px;
+    transition: background-color .30s ease-in-out;
+    &:hover {
+      background-color: #1a4459;
+    }
   }
 }

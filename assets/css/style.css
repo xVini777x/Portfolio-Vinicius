@@ -2,6 +2,7 @@
  *  Owl Carousel - Core
  */
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 .owl-carousel {
   display: none;
   width: 100%;
@@ -48,8 +49,13 @@
   -webkit-touch-callout: none;
 }
 .owl-carousel .owl-item img {
-  display: block;
-  width: 100%;
+  width: 130px;
+  height: 130px;
+  border-radius: 55%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  padding: 3px;
+  background: #66f04f;
 }
 .owl-carousel .owl-nav.disabled,
 .owl-carousel .owl-dots.disabled {
@@ -683,7 +689,7 @@
   box-sizing: border-box;
   text-decoration: none;
   font-size: 1em;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -969,6 +975,15 @@ figure .about-foto {
   margin-top: 20px;
 }
 #slide-projetos p {
-  font-size: 18px;
+  font-size: 13px;
   margin-top: 10px;
+  color: #fff;
+}
+#slide-projetos figure {
+  background-color: #212529;
+  padding: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+#slide-projetos figure:hover {
+  background-color: #1a4459;
 }
