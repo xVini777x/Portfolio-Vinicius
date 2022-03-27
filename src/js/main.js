@@ -1,96 +1,103 @@
-const siteNav = document.querySelector('.js-site-nav')
-const menu = document.querySelector('.js-menu')
-const menuButton = document.querySelector('.js-menu-button')
-const navCurtain = document.querySelector('.js-nav-curtain')
-const navLinks = document.querySelector('.site-nav__menu')
+const siteNav = document.querySelector(".js-site-nav");
+const menu = document.querySelector(".js-menu");
+const menuButton = document.querySelector(".js-menu-button");
+const navCurtain = document.querySelector(".js-nav-curtain");
+const navLinks = document.querySelector(".site-nav__menu");
 
 function mobileNavToggler() {
   const state = {
     isOpen: false,
-  }
+  };
 
   function showMenu() {
-    siteNav.classList.add('site-nav--is-open')
-    menu.classList.remove('fade-out')
-    menu.classList.add('fade-in')
+    siteNav.classList.add("site-nav--is-open");
+    menu.classList.remove("fade-out");
+    menu.classList.add("fade-in");
   }
 
   function hideMenu() {
-    siteNav.classList.remove('site-nav--is-open')
-    menu.classList.remove('fade-in')
-    menu.classList.add('fade-out')
+    siteNav.classList.remove("site-nav--is-open");
+    menu.classList.remove("fade-in");
+    menu.classList.add("fade-out");
   }
 
   function curtainUp() {
-    navCurtain.classList.remove('curtain-down')
-    navCurtain.classList.add('curtain-up')
+    navCurtain.classList.remove("curtain-down");
+    navCurtain.classList.add("curtain-up");
   }
 
   function curtainDown() {
-    navCurtain.classList.remove('curtain-up')
-    navCurtain.classList.add('curtain-down')
+    navCurtain.classList.remove("curtain-up");
+    navCurtain.classList.add("curtain-down");
   }
 
-  function teste() {
-
-  }
+  function teste() {}
 
   function unfocusButton(event) {
-    menuButton.classList.remove('menu-button__lines--open')
-    menuButton.setAttribute('aria-expanded', 'false')
+    menuButton.classList.remove("menu-button__lines--open");
+    menuButton.setAttribute("aria-expanded", "false");
   }
 
   function focusButton(event) {
-    menuButton.classList.add('menu-button__lines--open')
-    menuButton.setAttribute('aria-expanded', 'true')
+    menuButton.classList.add("menu-button__lines--open");
+    menuButton.setAttribute("aria-expanded", "true");
   }
 
   function handleMenuButtonClick() {
     if (state.isOpen) {
-      hideMenu()
-      unfocusButton()
-      curtainDown()
-      state.isOpen = false
-      return
+      hideMenu();
+      unfocusButton();
+      curtainDown();
+      state.isOpen = false;
+      return;
     }
 
-
-    
-
-
-    focusButton()
-    curtainUp()
-    state.isOpen = true
+    focusButton();
+    curtainUp();
+    state.isOpen = true;
   }
-
 
   function handleCurtainAnimationEnd() {
     if (state.isOpen) {
-      showMenu()
+      showMenu();
     }
   }
 
   return {
     handleEvent(event) {
-      if (event.type === 'click') {
-        handleMenuButtonClick()
-        return
+      if (event.type === "click") {
+        handleMenuButtonClick();
+        return;
       }
 
-      if (event.type === 'animationend') {
-        handleCurtainAnimationEnd()
+      if (event.type === "animationend") {
+        handleCurtainAnimationEnd();
       }
     },
 
     init() {
-      navLinks.addEventListener('click', this)
-      menuButton.addEventListener('click', this)
-      navCurtain.addEventListener('animationend', this)
+      navLinks.addEventListener("click", this);
+      menuButton.addEventListener("click", this);
+      navCurtain.addEventListener("animationend", this);
     },
-  }
+  };
 }
 
-mobileNavToggler().init()
+mobileNavToggler().init();
+
+
+const titulo = document.querySelector(".text-box-about h2 span");
+typeWriter(titulo);
+
+function typeWriter(elemento) {
+  const textoArray = elemento.innerHTML.split("");
+  elemento.innerHTML = "";
+  textoArray.forEach((letra, i) => {
+    setTimeout(() =>  elemento.innerHTML += letra, 125 * i);
+    setInterval(() => typeWriter(titulo),13000);
+  });
+}
+
 
 
 $("#slide-projetos").owlCarousel({

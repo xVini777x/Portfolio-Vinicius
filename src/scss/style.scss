@@ -142,6 +142,20 @@ figure {
       position: absolute;
       margin-top: 33px;
     }
+    &:after {
+      content: "|";
+      margin-left: 5px; 
+      opacity: 1;
+      animation: pisca .7s infinite;
+      @keyframes pisca {
+        0%, 100%{
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    }
   }
 
   p {
@@ -341,7 +355,7 @@ figure {
   figure {
     background-color: #212529;
     padding: 20px;
-    transition: background-color .30s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     &:hover {
       background-color: #1a4459;
     }
