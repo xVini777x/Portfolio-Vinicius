@@ -15,7 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
   </head>
-  <body>
+  <body class="debug">
     <section class="container-home">
       <nav
         class="site-nav js-site-nav"
@@ -69,11 +69,6 @@
     </section>
 
     <main>
-      <div class="fundoAzulEscuro">
-        <br />
-        <br />
-        <br />
-      </div>
       <!--  SECTION - SOBRE MIM  -->
       <section id="sobremim-position" class="content-about">
         <div class="container">
@@ -96,7 +91,9 @@
                 </figure>
               </div>
               <div class="text-box-about mt-5 mt-lg-0 col-12 col-lg-9">
-                <h2>Olá<span>, me chamo Vinicius</span></h2>
+                <h2>
+                  Olá, <span class="animation-js"></span>
+                </h2>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -115,18 +112,13 @@
 
       <!--  SECTION - MEUS PROJETOS  -->
       <section id="projects-position" class="container-projects">
-        <div class="fundoAzulEscuro">
-          <br />
-          <br />
-          <br />
-        </div>
         <div class="container">
           <header class="text-box-projects">
             <h1>Meus projetos</h1>
             <p>
-              &#8722;
+              <span>&#8722;</span>
               <span>Aqui você poderá ver meus atuais projetos feitos</span>
-              &#8722;
+              <span>&#8722;</span>
             </p>
           </header>
           <div
@@ -157,8 +149,28 @@
 
     <!--  SCRIPT -->
     <script src="assets/js/main.min.js"></script>
-    <script src="src/js/includes/jquery-3.6.0.min.js"></script>
-    <script src="src/js/includes/owl.carousel.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+var typed = new Typed(".animation-js", {
+  strings: [
+    "me chamo Vinicius",
+    "me chamo Vinicius"
+  ],
+  typeSpeed: 60,
+  backSpeed: 60,
+  loop: true
+  });
+
+  ScrollReveal({
+    reset: true,
+    distance: "60px",
+    duration: 800,
+    delay: 400
+  });
+  ScrollReveal().reveal(".content-about", { origin: "top"});
+  ScrollReveal().reveal(".container-projects", { origin: "top"});
+    </script>
     <!--  SCRIPT - END -->
   </body>
 </html>
