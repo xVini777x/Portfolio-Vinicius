@@ -188,8 +188,7 @@
   justify-self: end;
   grid-area: logo;
   color: #fff;
-  position: -webkit-sticky;
-  position: sticky;
+  z-index: 99999;
   top: 0;
   left: 0;
 }

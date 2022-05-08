@@ -525,8 +525,7 @@
   justify-self: end;
   grid-area: logo;
   color: #fff;
-  position: -webkit-sticky;
-  position: sticky;
+  z-index: 99999;
   top: 0;
   left: 0;
 }
@@ -1063,4 +1062,24 @@ figure .about-foto {
 .container-skills__grid .conf-grid p {
   padding-top: 15px;
   font-size: 15px;
+}
+
+.container-forms {
+  padding: 50px 0;
+}
+.container-forms__box-forms h1 {
+  padding: 30px 0;
+  border-top: solid 5px #66f04f;
+  text-align: center;
+}
+.container-forms__box-forms .conf-forms input {
+  margin-right: 20px;
+  padding: 5px;
+}
+.container-forms__box-forms .conf-forms textarea {
+  height: 155px;
+  padding: 10px;
+  width: 435px;
+  resize: none;
+  margin-bottom: 25px;
 }
