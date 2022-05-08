@@ -119,3 +119,34 @@ $(document).ready(function () {
     }
   });
 });
+
+var typed = new Typed(".animation-js", {
+  strings: ["Olá, me chamo Vinicius", "Entenda um pouco sobre mim"],
+  typeSpeed: 60,
+  backSpeed: 60,
+  loop: true,
+});
+
+ScrollReveal({
+  reset: true,
+  distance: "60px",
+  duration: 800,
+  delay: 400,
+});
+ScrollReveal().reveal(".content-about", {
+  origin: "top",
+});
+ScrollReveal().reveal("#slide-projetos", {
+  origin: "left",
+});
+ScrollReveal().reveal(".conf-grid", {
+  origin: "left",
+});
+ScrollReveal().reveal(".lottie-player", {
+  origin: "left",
+});
+ScrollReveal().reveal(".conf-forms", {
+  origin: "right",
+});
+
+
