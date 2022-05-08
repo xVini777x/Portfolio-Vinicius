@@ -369,7 +369,7 @@
     Curtain
   */
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 799px) {
   .site-nav {
     background-color: #151517;
     box-shadow: 0 12px 15px black;
@@ -505,7 +505,7 @@
   align-items: center;
   grid-template-areas: "logo . menuButton" "menu menu menu";
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 799px) {
   .site-nav .wrapper__nav-area {
     justify-content: space-between;
   }
@@ -706,6 +706,17 @@ a:hover {
 .fundoAzulEscuro {
   background-color: #1a4459;
   height: 50px;
+}
+
+nav {
+  transition: 0.7s;
+}
+
+.sticky {
+  background: #00000087;
+  position: fixed;
+  transition: 0.7s;
+  width: 100%;
 }
 
 .container-home {
@@ -992,4 +1003,64 @@ figure .about-foto {
 }
 #slide-projetos figure:hover {
   background-color: #1a4459;
+}
+
+.container-skills {
+  background-color: #f8f8fb;
+  border-radius: 50px;
+  padding: 60px 0;
+}
+.container-skills header h1 {
+  font-size: 45px;
+  text-align: center;
+  color: #000000;
+  position: relative;
+}
+.container-skills header h1::before {
+  width: 270px;
+  border-bottom: 3px solid #66f04f;
+  content: "";
+  position: absolute;
+  top: 60;
+}
+.container-skills__grid {
+  padding-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 30px;
+  grid-template-areas: ".";
+}
+@media only screen and (max-width: 992px) {
+  .container-skills__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container-skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.container-skills__grid .conf-grid {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding: 20px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.container-skills__grid .conf-grid:hover {
+  transform: translateY(-10px) !important;
+  transition: 0.5s !important;
+}
+.container-skills__grid .conf-grid figure img {
+  width: 115px;
+}
+.container-skills__grid .conf-grid h3 {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 27px;
+}
+.container-skills__grid .conf-grid p {
+  padding-top: 15px;
+  font-size: 15px;
 }

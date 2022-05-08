@@ -13,35 +13,35 @@ function mobileNavToggler() {
     siteNav.classList.add("site-nav--is-open");
     menu.classList.remove("fade-out");
     menu.classList.add("fade-in");
-  };
+  }
 
   function hideMenu() {
     siteNav.classList.remove("site-nav--is-open");
     menu.classList.remove("fade-in");
     menu.classList.add("fade-out");
-  };
+  }
 
   function curtainUp() {
     navCurtain.classList.remove("curtain-down");
     navCurtain.classList.add("curtain-up");
-  };
+  }
 
   function curtainDown() {
     navCurtain.classList.remove("curtain-up");
     navCurtain.classList.add("curtain-down");
-  };
+  }
 
   function teste() {}
 
   function unfocusButton(event) {
     menuButton.classList.remove("menu-button__lines--open");
     menuButton.setAttribute("aria-expanded", "false");
-  };
+  }
 
   function focusButton(event) {
     menuButton.classList.add("menu-button__lines--open");
     menuButton.setAttribute("aria-expanded", "true");
-  };
+  }
 
   function handleMenuButtonClick() {
     if (state.isOpen) {
@@ -50,29 +50,29 @@ function mobileNavToggler() {
       curtainDown();
       state.isOpen = false;
       return;
-    };
+    }
 
     focusButton();
     curtainUp();
     state.isOpen = true;
-  };
+  }
 
   function handleCurtainAnimationEnd() {
     if (state.isOpen) {
       showMenu();
-    };
-  };
+    }
+  }
 
   return {
     handleEvent(event) {
       if (event.type === "click") {
         handleMenuButtonClick();
         return;
-      };
+      }
 
       if (event.type === "animationend") {
         handleCurtainAnimationEnd();
-      };
+      }
     },
 
     init() {
@@ -81,13 +81,9 @@ function mobileNavToggler() {
       navCurtain.addEventListener("animationend", this);
     },
   };
-};
+}
 
 mobileNavToggler().init();
-
-
-
-
 
 $("#slide-projetos").owlCarousel({
   margin: 15,
@@ -109,4 +105,17 @@ $("#slide-projetos").owlCarousel({
       loop: false,
     },
   },
+});
+
+$(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(window).width() >= 800) {
+      var scroll = $(window).scrollTop();
+      if (scroll >= 5) {
+        $("nav").addClass("sticky");
+      } else if (!scroll) {
+        $("nav").removeClass("sticky");
+      }
+    }
+  });
 });

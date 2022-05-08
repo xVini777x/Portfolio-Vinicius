@@ -32,7 +32,7 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   z-index: 99999;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 799px) {
     background-color: #151517;
     box-shadow: 0 12px 15px black;
   }
@@ -128,7 +128,7 @@
       align-items: center;
       grid-template-areas: "logo . menuButton" "menu menu menu";
 
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 799px) {
         justify-content: space-between;
       }
       @media (min-width: 50rem) {
