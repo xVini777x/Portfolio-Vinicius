@@ -441,10 +441,6 @@ figure {
       }
     }
     .box-forms {
-      @media only screen and (max-width: 991px) {
-        display: flex;
-        justify-content: center;
-      }
       .conf-forms {
         input {
           margin: 0 20px 20px 0;
