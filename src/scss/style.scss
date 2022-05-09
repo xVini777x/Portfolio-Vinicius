@@ -472,6 +472,9 @@ figure {
           background: #f7f7f7;
           border: 1px solid #ccc;
           outline: 0;
+          @media only screen and (max-width: 472px) {
+            width: 285px;
+          }
         }
       }
     }
